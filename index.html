@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+  <script src="main.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+
+<div class="contenedor  h-screen grid grid-cols-2 grid-rows-3    items-center "> <!--text-center-->
+  <h1 class="titulo font-bold text-4xl col-span-1 row-span-1 text-center">Generador de cotización</h1>
+  <!--Buscador-->
+  <div class="buscador__contenedor grid grid-rows-3 gap-4 justify-items-center  self-center  col-start-1 row-start-2">
+    <h2 class="titulo__buscador text-2xl">Ingrese el 📄folio del pedido realizado</h2>
+    <input type="text" class="buscador bg-gray-100 rounded-full w-44" id="codigoderastreo" placeholder="FD765">
+    <button class="buscador__boton bg-gray-400 h-8 w-32 rounded-full" type="submit" onclick="verificar()">Buscar Folio</button>
+  </div>
+
+  <!--representacion de los resultados en una hoja-->
+  <div id="contenedor__hoja" class="contenedor__hoja  mt-20">
+
+
+      <div class="numerosLogo   grid grid-cols-3 grid-rows-6 h-44">
+        <p class="telefono 1 col-start-2 row-start-1 text-xs">Tel.: 351 515 04 07</p>
+        <p class="telefono 2 col-start-2 row-start-2 text-xs">Tel.: 351 515 04 07</p>
+        <p class="telefono 3 col-start-2 row-start-3 text-xs">Tel.: 351 515 04 07</p>
+        <p class="telefono 4 col-start-2 row-start-4 text-xs">Tel.: 351 515 04 07</p>
+        <img src="sencologoapp.png" class=" col-start-1 row-start-1 row-end-4 justify-center h-20 self-start place-self-end " alt="">
+
+        <h3 class=" col-start-1 col-end-3 row-start-5 text-center mr-16 mt-8">Señalamientos Normativos para el Campo y Otros, S. DE RL. DE CV.</h3>
+
+          <p class="correo  col-start-1 col-end-3  row-start-7 text-center mr-16 mt-16">sencocontacto@gmail.com</p>
+      </div>    
+
+
+      <div class="infoCliente"id="infoCliente">
+          <p class="empresa text-xs" id="empresa">Empresa:</p>
+          <p class="contacto text-xs">Contacto:</p>
+          <p class="numero text-xs">Numero:</p>
+          <p class="cotizacion text-xs">Cotización:</p>
+        </div>
+
+          <div class="letreros grid grid-cols-7 text-center mt-3">
+            <p class="letrero text-xs">letrero</p>
+            <p class="material text-xs">Material</p>
+            <p class="ancho text-xs">Ancho</p>
+            <p class="alto text-xs">Alto</p>
+            <p class="precioLetrero text-xs">$ x Letrero</p>
+            <p class="cantidad text-xs">Cantidad</p>
+            <p class="precio text-xs">Precio</p>
+            <p class="letrerosTotal text-xs">Letreros</p>
+            <p class="subtotal text-xs">Subtotal</p>
+            <p class="iva text-xs">Iva</p>
+            <p class="total text-xs">Total</p>
+          </div>
+
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
