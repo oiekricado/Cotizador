@@ -6,6 +6,11 @@
     width: 800px;
 
 }
+.buscador__contenedor{
+    width: 600px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
 
 .contLetreros{
     word-spacing: 15px;
