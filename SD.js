@@ -1,11 +1,11 @@
-let codigo = "";
+let codigoSD = "";
 function verificar() {
   let codigo =
     document.getElementById(
       "codigoderastreo"
     ).value; /*prompt("ingrese el codigo de pedido");*/
 /////////////////////////////////FD////////////////////////////
-  let getdatos = "https://sheetdb.io/api/v1/wy8b9jp5ln99i";
+  let getdatos = "https://sheetdb.io/api/v1/wy8b9jp5ln99i?sheet=SD";
   fetch(getdatos)
     .then((data) => data.json())
     .then((datospedidos) => {
@@ -59,7 +59,7 @@ function verificar() {
           ///////////////total///////////////////
           sumtotal = 0
           for (let i = 0; i < encontrarpedidos.length; i++) {
-            precioint = Number(encontrarpedidos[i].PRECIO).toFixed(2)
+            precioint = Number(encontrarpedidos[i].PRECIO)
           sumtotal += precioint
           }
           console.log(sumtotal)
@@ -77,7 +77,6 @@ function verificar() {
 
             ////////////////////////sacar iva///////////////
             iva = sumtotal - subtotal
-            ivadecimal = iva.toFixed(2)
             document.getElementById("letreros").innerHTML += `
             <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs"> ${iva}</p>
             `;
