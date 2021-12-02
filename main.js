@@ -4,6 +4,7 @@ function verificar() {
     document.getElementById(
       "codigoderastreo"
     ).value; /*prompt("ingrese el codigo de pedido");*/
+
 /////////////////////////////////FD////////////////////////////
   let getdatos = "https://sheetdb.io/api/v1/wy8b9jp5ln99i";
   fetch(getdatos)
@@ -105,6 +106,7 @@ function verificar() {
     });
 }
 
+
 //////////////////////////// aqui esta el codigo para descargar el pdf
 
 function descargar() {
@@ -114,7 +116,7 @@ function descargar() {
   var element = document.getElementById("contenedor__hoja");
   html2pdf(element, {
     margin: 1,
-    filename: `${filenombre}.pdf`,
+    filename: `cotizacion.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },

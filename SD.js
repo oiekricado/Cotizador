@@ -106,16 +106,17 @@ function verificar() {
 
 //////////////////////////// aqui esta el codigo para descargar el pdf
 
-function descargar() {
+/*function descargar() {
   let parrafosCliente = document.getElementById("infoCliente");
   parrafosCliente.style.wordSpacing = "12px";
 
   var element = document.getElementById("contenedor__hoja");
   html2pdf(element, {
     margin: 1,
-    filename: `${filenombre}.pdf`,
+    filename: `CotizacionSD.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   });
 }
+*/
