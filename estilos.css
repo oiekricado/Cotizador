@@ -81,7 +81,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 @media (max-width: 1024px) {
 .buscador__contenedor{
-        width: 300px;
+        width: 350px;
         height: 200px;
         padding-bottom: 3px;
         padding-top: 3px;
