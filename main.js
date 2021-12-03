@@ -58,7 +58,7 @@ function verificar() {
           ////////////////////////////////////////////////////////////
 
           ///////////////total///////////////////
-          sumtotal = 0
+          sumtotal.toFixed() = 0
           for (let i = 0; i < encontrarpedidos.length; i++) {
             precioint = Number(encontrarpedidos[i].PRECIO).toFixed(2)
           sumtotal += precioint
@@ -70,7 +70,7 @@ function verificar() {
             /////////////////////////
 
             //////////////////sacar el subtotal//////////
-            subtotal= sumtotal / 1.16
+            subtotal.toFixed()= sumtotal / 1.16
             document.getElementById("letreros").innerHTML +=`
             <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs"> ${subtotal}</p>
             `;
