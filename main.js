@@ -57,30 +57,32 @@ function verificar() {
             console.log(resultadoCantidadtexto)
           ////////////////////////////////////////////////////////////
 
+
+          
           ///////////////total///////////////////
           sumtotal.toFixed() = 0
           for (let i = 0; i < encontrarpedidos.length; i++) {
-            precioint = Number(encontrarpedidos[i].PRECIO).toFixed(2)
-          sumtotal += precioint
+            precioint.toFixed() = Number(encontrarpedidos[i].PRECIO.toFixed()).toFixed()
+          sumtotal += precioint.toFixed()
           }
           console.log(sumtotal)
           document.getElementById("letreros").innerHTML +=`
-            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs"> ${sumtotal}</p>
+            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs"> ${sumtotal.toFixed()}</p>
             `;
             /////////////////////////
 
             //////////////////sacar el subtotal//////////
-            subtotal.toFixed()= sumtotal / 1.16
+            subtotal.toFixed()= sumtotal.toFixed() / 1.16
             document.getElementById("letreros").innerHTML +=`
-            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs"> ${subtotal}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs"> ${subtotal.toFixed()}</p>
             `;
             ////////////////////////////////////
 
             ////////////////////////sacar iva///////////////
-            iva = sumtotal - subtotal
+            iva = sumtotal.toFixed() - subtotal.toFixed()
             ivadecimal = iva.toFixed(2)
             document.getElementById("letreros").innerHTML += `
-            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs"> ${iva}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs"> ${iva.toFixed()}</p>
             `;
 
 
