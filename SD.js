@@ -21,8 +21,9 @@ function verificar() {
       empresa.innerHTML = `
       <p class="empresa text-xs" id="empresa">Empresa:  ${pedidoencontrado.EMPRESA}</p>
       <p class="contacto text-xs">Contacto: ${pedidoencontrado.CLIENTE}</p>
-      <p class="numero text-xs">Numero:</p>
-      <p class="cotizacion text-xs">Cotización:</p>`;
+      <p class="numero text-xs ">Numero: ${pedidoencontrado.NUMERO}</p>
+      <p class="cotizacion text-xs ">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
+      `;
     });
 //////////////////////////////////////////////////////////
     
@@ -64,21 +65,21 @@ function verificar() {
           }
           console.log(sumtotal)
           document.getElementById("letreros").innerHTML +=`
-            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs"> ${sumtotal}</p>
+            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs border-b-2"> ${Math.round(sumtotal)}</p>
             `;
             /////////////////////////
 
             //////////////////sacar el subtotal//////////
             subtotal= sumtotal / 1.16
             document.getElementById("letreros").innerHTML +=`
-            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs"> ${subtotal}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs border-b-2"> ${Math.round(subtotal)}</p>
             `;
             ////////////////////////////////////
 
             ////////////////////////sacar iva///////////////
             iva = sumtotal - subtotal
             document.getElementById("letreros").innerHTML += `
-            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs"> ${iva}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs border-b-2"> ${iva}</p>
             `;
 
 

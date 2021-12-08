@@ -1,3 +1,6 @@
+
+
+
 .buscador{
     text-align: center;
 }
@@ -12,7 +15,7 @@
 }
 
 .contLetreros{
-    word-spacing: 12px;
+    word-spacing: 0px;
 }
 
  p{
@@ -21,11 +24,17 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .contletrero{
-    font-size: 7px;
+    font-size: 12px;
+   
+}
+.letreropedido{
+    text-transform:lowercase;
+    word-spacing: 2px;
 }
 
 .letreros p{
-    font-size: 10px;
+    font-size: 12px;
+    
 }
 
 #letreros{

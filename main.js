@@ -18,12 +18,15 @@ function verificar() {
       console.log(pedidoencontrado.FOLIO);
       console.log(pedidoencontrado.CLIENTE);
       console.log(pedidoencontrado.EMPRESA);
+      console.log(pedidoencontrado.NUMERO);
+      console.log(pedidoencontrado.NUMEROCOTIZACION);
       let empresa = document.getElementById("infoCliente");
       empresa.innerHTML = `
       <p class="empresa text-xs" id="empresa">Empresa:  ${pedidoencontrado.EMPRESA}</p>
       <p class="contacto text-xs">Contacto: ${pedidoencontrado.CLIENTE}</p>
-      <p class="numero text-xs">Numero:</p>
-      <p class="cotizacion text-xs">Cotización:</p>`;
+      <p class="numero text-xs">Numero: ${pedidoencontrado.NUMERO}</p>
+      <p class="cotizacion text-xs">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
+      `;
     });
 //////////////////////////////////////////////////////////
     
@@ -67,22 +70,22 @@ function verificar() {
           }
           console.log(sumtotal)
           document.getElementById("letreros").innerHTML +=`
-            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs"> ${sumtotal}</p>
+            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs border-b-2"> ${Math.round(sumtotal)}</p>
             `;
             /////////////////////////
 
             //////////////////sacar el subtotal//////////
             subtotal= sumtotal / 1.16
             document.getElementById("letreros").innerHTML +=`
-            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs"> ${subtotal}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs border-b-2"> ${Math.round(subtotal)}</p>
             `;
             ////////////////////////////////////
 
             ////////////////////////sacar iva///////////////
-            iva = sumtotal - subtotal
+            iva = sumtotal.toFixed() - subtotal.toFixed()
             ivadecimal = iva
             document.getElementById("letreros").innerHTML += `
-            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs"> ${iva}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs border-b-2"> ${iva}</p>
             `;
 
 
@@ -93,13 +96,13 @@ function verificar() {
 
 
         document.getElementById("contLetreros").innerHTML += `
-            <p class=" letreropedido col-start-1 text-xs place-content-start"> ${encontrarpedidos[i].Letrero1}</p> 
-            <p class=" materialpedido col-start-2 text-xs"> ${encontrarpedidos[i].MATERIAL}</p> 
-            <p class=" anchopedido col-start-3 text-xs"> ${encontrarpedidos[i].ANCHO}</p> 
-            <p class=" altopedido col-start-4 text-xs"> ${encontrarpedidos[i].ALTO}</p> 
-            <p class=" precioletreropedido col-start-5 text-xs"> ${encontrarpedidos[i].PRECIOXLETRERO}</p> 
-            <p class=" cantidadpedido col-start-6 text-xs"> ${encontrarpedidos[i].cantidad}</p> 
-            <p class=" preciopedido col-start-7 text-xs"> ${encontrarpedidos[i].PRECIO}</p>
+            <p class=" letreropedido col-start-1 text-xs place-content-start border-b-2"> ${encontrarpedidos[i].Letrero1}</p> 
+            <p class=" materialpedido col-start-2 text-xs border-b-2"> ${encontrarpedidos[i].MATERIAL}</p> 
+            <p class=" anchopedido col-start-3 text-xs border-b-2"> ${encontrarpedidos[i].ANCHO}</p> 
+            <p class=" altopedido col-start-4 text-xs border-b-2"> ${encontrarpedidos[i].ALTO}</p> 
+            <p class=" precioletreropedido col-start-5 text-xs border-b-2"> ${encontrarpedidos[i].PRECIOXLETRERO}</p> 
+            <p class=" cantidadpedido col-start-6 text-xs border-b-2"> ${encontrarpedidos[i].cantidad}</p> 
+            <p class=" preciopedido col-start-7 text-xs border-b-2"> ${encontrarpedidos[i].PRECIO}</p>
         `;
         
       }
@@ -113,7 +116,7 @@ function verificar() {
 
 function descargar() {
   let parrafosCliente = document.getElementById("infoCliente");
-  parrafosCliente.style.wordSpacing = "12px";
+  parrafosCliente.style.wordSpacing = "5px";
 
   var element = document.getElementById("contenedor__hoja");
   html2pdf(element, {
