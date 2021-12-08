@@ -22,10 +22,11 @@ function verificar() {
       console.log(pedidoencontrado.NUMEROCOTIZACION);
       let empresa = document.getElementById("infoCliente");
       empresa.innerHTML = `
-      <p class="empresa text-xs" id="empresa">Empresa:  ${pedidoencontrado.EMPRESA}</p>
-      <p class="contacto text-xs">Contacto: ${pedidoencontrado.CLIENTE}</p>
-      <p class="numero text-xs">Numero: ${pedidoencontrado.NUMERO}</p>
-      <p class="cotizacion text-xs">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
+      <p class="empresa text-xs col-start-1" id="empresa">Empresa:  ${pedidoencontrado.EMPRESA}</p>
+      <p class="contacto text-xs col-start-1">Contacto: ${pedidoencontrado.CLIENTE}</p>
+      <p class="numero text-xs col-start-1">Numero: ${pedidoencontrado.NUMERO}</p>
+      <p class="cotizacion text-xs col-start-1">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
+      <p class="cotizacion text-xs col-start-2">Folio: ${pedidoencontrado.FOLIO}</p>
       `;
     });
 //////////////////////////////////////////////////////////
