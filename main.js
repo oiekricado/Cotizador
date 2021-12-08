@@ -1,12 +1,12 @@
-let codigo = "";
+
 function verificar() {
   let codigo =
     document.getElementById(
       "codigoderastreo"
     ).value; /*prompt("ingrese el codigo de pedido");*/
-
+      
 /////////////////////////////////FD////////////////////////////
-  let getdatos = "https://sheetdb.io/api/v1/wy8b9jp5ln99i";
+  let getdatos = "https://sheetdb.io/api/v1/jr27h9yaoi7tr";
   fetch(getdatos)
     .then((data) => data.json())
     .then((datospedidos) => {
@@ -37,7 +37,7 @@ function verificar() {
   //////////consulta de letreros///////
   
   let getdatosCotizador =
-    "https://sheetdb.io/api/v1/ffzwzy8glumlp?sheet=ordenes_de_cliente";
+    "https://sheetdb.io/api/v1/1a2tl55pd0jnu?sheet=ordenes_de_cliente";
   fetch(getdatosCotizador)
     .then((data) => data.json())
     .then((datospedidos) => {
@@ -110,7 +110,10 @@ function verificar() {
 
       
     });
+    return codigo
 }
+
+
 
 
 //////////////////////////// aqui esta el codigo para descargar el pdf
@@ -122,7 +125,7 @@ function descargar() {
   var element = document.getElementById("contenedor__hoja");
   html2pdf(element, {
     margin: 1,
-    filename: `${codigo}.pdf`,
+    filename: `${verificar()}.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
