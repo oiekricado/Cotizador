@@ -4,7 +4,7 @@ function verificar() {
     document.getElementById(
       "codigoderastreo"
     ).value; /*prompt("ingrese el codigo de pedido");*/
-
+     
 
     if(codigo.includes("SD")=== true){
       console.log("ES un folio SD")
@@ -29,6 +29,7 @@ function verificar() {
       <p class="cotizacion text-xs col-start-1">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
       <p class="cotizacion text-xs col-start-2">Folio: ${pedidoencontrado.FOLIO}</p>
       `;
+      
     });
 //////////////////////////////////////////////////////////
     }else{
@@ -61,6 +62,7 @@ function verificar() {
       `;
     });
 //////////////////////////////////////////////////////////
+      
     }
 
     
@@ -143,7 +145,7 @@ function verificar() {
 
       
     });
-    return codigo
+    
 }
 
 
@@ -152,13 +154,16 @@ function verificar() {
 //////////////////////////// aqui esta el codigo para descargar el pdf
 
 function descargar() {
+  codigopdf = document.getElementById(
+    "codigoderastreo"
+  ).value;
   let parrafosCliente = document.getElementById("infoCliente");
   parrafosCliente.style.wordSpacing = "5px";
 
   var element = document.getElementById("contenedor__hoja");
   html2pdf(element, {
     margin: 1,
-    filename: `${verificar()}.pdf`,
+    filename: `${codigopdf}.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
