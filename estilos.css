@@ -37,7 +37,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    
 }
 .letreropedido{
-    text-transform:lowercase;
+    text-transform:uppercase;
     word-spacing: 2px;
 }
 

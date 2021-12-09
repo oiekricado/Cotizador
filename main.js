@@ -106,14 +106,14 @@ function verificar() {
           }
           console.log(sumtotal)
           document.getElementById("letreros").innerHTML +=`
-            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs border-b-2"> ${Math.round(sumtotal)}</p>
+            <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs border-b-2"> ${parseFloat(sumtotal).toFixed(2)}</p>
             `;
             /////////////////////////
 
             //////////////////sacar el subtotal//////////
             subtotal= sumtotal / 1.16
             document.getElementById("letreros").innerHTML +=`
-            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs border-b-2"> ${Math.round(subtotal)}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs border-b-2"> ${parseFloat(subtotal).toFixed(2)}</p>
             `;
             ////////////////////////////////////
 
@@ -121,7 +121,7 @@ function verificar() {
             iva = sumtotal.toFixed() - subtotal.toFixed()
             ivadecimal = iva
             document.getElementById("letreros").innerHTML += `
-            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs border-b-2"> ${iva}</p>
+            <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs border-b-2"> ${parseFloat(iva).toFixed(2)}</p>
             `;
 
 
@@ -154,16 +154,22 @@ function verificar() {
 //////////////////////////// aqui esta el codigo para descargar el pdf
 
 function descargar() {
-  codigopdf = document.getElementById(
+  foliopdf = document.getElementById(
     "codigoderastreo"
   ).value;
+
+  contactopdf = document.getElementsByClassName("contacto")
+
+
+
+
   let parrafosCliente = document.getElementById("infoCliente");
   parrafosCliente.style.wordSpacing = "5px";
 
   var element = document.getElementById("contenedor__hoja");
   html2pdf(element, {
     margin: 1,
-    filename: `${codigopdf}.pdf`,
+    filename: `${foliopdf}.pdf`,
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
