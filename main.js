@@ -4,8 +4,36 @@ function verificar() {
     document.getElementById(
       "codigoderastreo"
     ).value; /*prompt("ingrese el codigo de pedido");*/
-      
-/////////////////////////////////FD////////////////////////////
+
+
+    if(codigo.includes("SD")=== true){
+      console.log("ES un folio SD")
+      /////////////////////////////////FD////////////////////////////
+  let getdatos = "https://sheetdb.io/api/v1/jr27h9yaoi7tr?sheet=SD";
+  fetch(getdatos)
+    .then((data) => data.json())
+    .then((datospedidos) => {
+      function encontrarpedido(foliocodigo) {
+        return foliocodigo.FOLIO === codigo;
+      }
+      let pedidoencontrado = datospedidos.find(encontrarpedido);
+
+      console.log(pedidoencontrado.FOLIO);
+      console.log(pedidoencontrado.CLIENTE);
+      console.log(pedidoencontrado.EMPRESA);
+      let empresa = document.getElementById("infoCliente");
+      empresa.innerHTML = `
+      <p class="empresa text-xs col-start-1" id="empresa">Empresa:  ${pedidoencontrado.EMPRESA}</p>
+      <p class="contacto text-xs col-start-1">Contacto: ${pedidoencontrado.CLIENTE}</p>
+      <p class="numero text-xs col-start-1">Numero: ${pedidoencontrado.NUMERO}</p>
+      <p class="cotizacion text-xs col-start-1">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
+      <p class="cotizacion text-xs col-start-2">Folio: ${pedidoencontrado.FOLIO}</p>
+      `;
+    });
+//////////////////////////////////////////////////////////
+    }else{
+      console.log("es un folio FD")
+      /////////////////////////////////FD////////////////////////////
   let getdatos = "https://sheetdb.io/api/v1/jr27h9yaoi7tr";
   fetch(getdatos)
     .then((data) => data.json())
@@ -13,6 +41,9 @@ function verificar() {
       function encontrarpedido(foliocodigo) {
         return foliocodigo.FOLIO === codigo;
       }
+
+     
+
       let pedidoencontrado = datospedidos.find(encontrarpedido);
 
       console.log(pedidoencontrado.FOLIO);
@@ -30,6 +61,8 @@ function verificar() {
       `;
     });
 //////////////////////////////////////////////////////////
+    }
+
     
  
     

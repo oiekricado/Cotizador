@@ -5,7 +5,7 @@ function verificar() {
       "codigoderastreo"
     ).value; /*prompt("ingrese el codigo de pedido");*/
 /////////////////////////////////FD////////////////////////////
-  let getdatos = "https://sheetdb.io/api/v1/wy8b9jp5ln99i?sheet=SD";
+  let getdatos = "https://sheetdb.io/api/v1/jr27h9yaoi7tr?sheet=SD";
   fetch(getdatos)
     .then((data) => data.json())
     .then((datospedidos) => {
@@ -19,10 +19,11 @@ function verificar() {
       console.log(pedidoencontrado.EMPRESA);
       let empresa = document.getElementById("infoCliente");
       empresa.innerHTML = `
-      <p class="empresa text-xs" id="empresa">Empresa:  ${pedidoencontrado.EMPRESA}</p>
-      <p class="contacto text-xs">Contacto: ${pedidoencontrado.CLIENTE}</p>
-      <p class="numero text-xs ">Numero: ${pedidoencontrado.NUMERO}</p>
-      <p class="cotizacion text-xs ">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
+      <p class="empresa text-xs col-start-1" id="empresa">Empresa:  ${pedidoencontrado.EMPRESA}</p>
+      <p class="contacto text-xs col-start-1">Contacto: ${pedidoencontrado.CLIENTE}</p>
+      <p class="numero text-xs col-start-1">Numero: ${pedidoencontrado.NUMERO}</p>
+      <p class="cotizacion text-xs col-start-1">Cotización: ${pedidoencontrado.NUMEROCOTIZACION}</p>
+      <p class="cotizacion text-xs col-start-2">Folio: ${pedidoencontrado.FOLIO}</p>
       `;
     });
 //////////////////////////////////////////////////////////
@@ -33,7 +34,7 @@ function verificar() {
   //////////consulta de letreros///////
   
   let getdatosCotizador =
-    "https://sheetdb.io/api/v1/ffzwzy8glumlp?sheet=ordenes_de_cliente";
+    "https://sheetdb.io/api/v1/1a2tl55pd0jnu?sheet=ordenes_de_cliente";
   fetch(getdatosCotizador)
     .then((data) => data.json())
     .then((datospedidos) => {
@@ -90,13 +91,13 @@ function verificar() {
 
 
         document.getElementById("contLetreros").innerHTML += `
-            <p class=" letreropedido col-start-1 text-xs place-content-start"> ${encontrarpedidos[i].Letrero1}</p> 
-            <p class=" materialpedido col-start-2 text-xs"> ${encontrarpedidos[i].MATERIAL}</p> 
-            <p class=" anchopedido col-start-3 text-xs"> ${encontrarpedidos[i].ANCHO}</p> 
-            <p class=" altopedido col-start-4 text-xs"> ${encontrarpedidos[i].ALTO}</p> 
-            <p class=" precioletreropedido col-start-5 text-xs"> ${encontrarpedidos[i].PRECIOXLETRERO}</p> 
-            <p class=" cantidadpedido col-start-6 text-xs"> ${encontrarpedidos[i].cantidad}</p> 
-            <p class=" preciopedido col-start-7 text-xs"> ${encontrarpedidos[i].PRECIO}</p>
+        <p class=" letreropedido col-start-1 text-xs place-content-start border-b-2"> ${encontrarpedidos[i].Letrero1}</p> 
+        <p class=" materialpedido col-start-2 text-xs border-b-2"> ${encontrarpedidos[i].MATERIAL}</p> 
+        <p class=" anchopedido col-start-3 text-xs border-b-2"> ${encontrarpedidos[i].ANCHO}</p> 
+        <p class=" altopedido col-start-4 text-xs border-b-2"> ${encontrarpedidos[i].ALTO}</p> 
+        <p class=" precioletreropedido col-start-5 text-xs border-b-2"> ${encontrarpedidos[i].PRECIOXLETRERO}</p> 
+        <p class=" cantidadpedido col-start-6 text-xs border-b-2"> ${encontrarpedidos[i].cantidad}</p> 
+        <p class=" preciopedido col-start-7 text-xs border-b-2"> ${encontrarpedidos[i].PRECIO}</p>
         `;
         
       }
