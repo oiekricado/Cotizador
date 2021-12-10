@@ -1,10 +1,14 @@
 
 function verificar() {
   let codigo =
-    document.getElementById(
-      "codigoderastreo"
-    ).value; /*prompt("ingrese el codigo de pedido");*/
+    document.getElementById("codigoderastreo").value.toUpperCase(); /*prompt("ingrese el codigo de pedido");*/
      
+    if(codigo.includes("SD")=== true || codigo.includes("FD")=== true ){
+      console.log("todo ok")
+    }else{
+      alert("ingrese un folio valido")
+    }
+
 
     if(codigo.includes("SD")=== true){
       console.log("ES un folio SD")
@@ -62,8 +66,8 @@ function verificar() {
       `;
     });
 //////////////////////////////////////////////////////////
-      
-    }
+    }///termino de else
+    
 
     
  
@@ -124,7 +128,7 @@ function verificar() {
             <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs border-b-2"> ${parseFloat(iva).toFixed(2)}</p>
             `;
 
-
+            
      
       for (i = 0; i <= encontrarpedidos.length; i++) {
         console.log("el " + i + " es: " + encontrarpedidos[i].Letrero1);
@@ -142,10 +146,10 @@ function verificar() {
         `;
         
       }
-
+     
       
     });
-    
+   
 }
 
 
@@ -156,7 +160,7 @@ function verificar() {
 function descargar() {
   foliopdf = document.getElementById(
     "codigoderastreo"
-  ).value;
+  ).value.toUpperCase();
 
   contactopdf = document.getElementsByClassName("contacto")
 
