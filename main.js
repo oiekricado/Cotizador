@@ -1,5 +1,5 @@
 function  verificar() {
-  
+  console.time("codigo")
   let codigo = document
     .getElementById("codigoderastreo")
     .value.toUpperCase(); /*prompt("ingrese el codigo de pedido");*/
@@ -9,7 +9,7 @@ function  verificar() {
   } else {
     alert("ingrese un folio valido");
   }
-
+  
   if (codigo.includes("SD") === true) {
     console.log("ES un folio SD");
     /////////////////////////////////FD////////////////////////////
@@ -71,7 +71,7 @@ function  verificar() {
       });
     //////////////////////////////////////////////////////////
   } ///termino de else
-
+ 
   //////////consulta de letreros///////
 
   let getdatosCotizador =
@@ -143,46 +143,9 @@ function  verificar() {
        document.getElementById("letreros").innerHTML += `
             <p class="sumatotalLetrero col-start-7 row-start-6 text-xs border-b-2"> ${parseFloat(total).toFixed(2)}</p>
             `;
-       /* }else{
-
-
-
-        
-
-        console.log("aqui va sin descuento")
-        ///////////////total///////////////////
-        sumtotal = 0
-        for (let i = 0; i < encontrarpedidos.length; i++) {
-          precioint = Number(encontrarpedidos[i].PRECIO)
-        sumtotal += precioint
-        }
-        console.log(sumtotal)
-        document.getElementById("letreros").innerHTML +=`
-          <p class="sumasubtotalLetrero col-start-7 row-start-6 text-xs border-b-2"> ${parseFloat(sumtotal).toFixed(2)}</p>
-          `;
-          /////////////////////////
-
-          //////////////////sacar el subtotal//////////
-          subtotal= sumtotal / 1.16
-          document.getElementById("letreros").innerHTML +=`
-          <p class="sumaIvaLetrero col-start-7 row-start-4 text-xs border-b-2"> ${parseFloat(subtotal).toFixed(2)}</p>
-          `;
-          ////////////////////////////////////
-
-          ////////////////////////sacar iva///////////////
-          iva = sumtotal.toFixed() - subtotal.toFixed()
-          ivadecimal = iva
-          document.getElementById("letreros").innerHTML += `
-          <p class="sumaIvaLetrero col-start-7 row-start-5 text-xs border-b-2"> ${parseFloat(iva).toFixed(2)}</p>
-          `;
-      }
-      
-      */
-
-
-
-
-
+       
+       
+           
       for (i = 0; i <= encontrarpedidos.length; i++) {
         console.log("el " + i + " es: " + encontrarpedidos[i].Letrero1);
         
@@ -197,6 +160,7 @@ function  verificar() {
         `;
       }
     });
+    console.timeEnd("codigo")
 }
 
 
